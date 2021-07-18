@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/home_bg_gradient"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/welcome_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Selamat Datang!"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stay Safe and Healthy!"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/todays_update_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/welcome_layout"
+        android:layout_marginStart="20dp"
+        android:text="Perkembangan Kasus Terkini"
+        android:textColor="@color/white" />
+
+   <ScrollView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_below="@id/todays_update_textview"
+       android:layout_marginTop="20dp"
+       android:layout_alignParentStart="true"
+       android:layout_alignParentEnd="true"
+       android:layout_alignParentBottom="true">
+
+       <LinearLayout
+           android:id="@+id/case_layout"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:orientation="vertical">
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical"
+               android:paddingTop="20dp">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="200dp"
+                   android:gravity="center"
+                   android:orientation="horizontal">
+
+                   <androidx.cardview.widget.CardView
+                       android:layout_width="wrap_content"
+                       android:layout_height="match_parent"
+                       android:layout_margin="4dp"
+                       app:cardCornerRadius="10dp"
+                       app:contentPadding="10dp">
+
+                       <RelativeLayout
+                           android:id="@+id/positive_case_layout"
+                           android:layout_width="150dp"
+                           android:layout_height="match_parent"
+                           android:padding="10dp">
+
+                           <ImageView
+                               android:layout_width="match_parent"
+                               android:layout_height="75dp"
+                               android:layout_alignParentTop="true"
+                               android:layout_marginBottom="10dp"
+                               android:src="@drawable/corona_virus" />
+
+                           <TextView
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_above="@id/positive_case_textview"
+                               android:layout_centerHorizontal="true"
+                               android:text="Positive Case"
+                               android:textStyle="bold" />
+
+                           <TextView
+                               android:id="@+id/positive_case_textview"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_alignParentBottom="true"
+                               android:layout_centerHorizontal="true"
+                               android:text="000"
+                               android:textColor="@android:color/holo_red_dark"
+                               android:textSize="24sp"
+                               android:textStyle="bold" />
+                       </RelativeLayout>
+                   </androidx.cardview.widget.CardView>
+
+                   <androidx.cardview.widget.CardView
+                       android:layout_width="wrap_content"
+                       android:layout_height="match_parent"
+                       android:layout_margin="4dp"
+                       app:cardCornerRadius="10dp"
+                       app:contentPadding="10dp">
+
+                       <RelativeLayout
+                           android:id="@+id/healed_case_layout"
+                           android:layout_width="150dp"
+                           android:layout_height="match_parent"
+                           android:padding="10dp">
+
+                           <ImageView
+                               android:layout_width="match_parent"
+                               android:layout_height="75dp"
+                               android:layout_alignParentTop="true"
+                               android:padding="10dp"
+                               android:src="@drawable/vaccine" />
+
+                           <TextView
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_above="@id/healed_case_textview"
+                               android:layout_centerHorizontal="true"
+                               android:text="Healed Case"
+                               android:textStyle="bold" />
+
+                           <TextView
+                               android:id="@+id/healed_case_textview"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_alignParentBottom="true"
+                               android:layout_centerHorizontal="true"
+                               android:text="000"
+                               android:textColor="@android:color/holo_green_light"
+                               android:textSize="24sp"
+                               android:textStyle="bold" />
+                       </RelativeLayout>
+                   </androidx.cardview.widget.CardView>
+               </LinearLayout>
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="200dp"
+                   android:gravity="center"
+                   android:orientation="horizontal">
+
+                   <androidx.cardview.widget.CardView
+                       android:layout_width="wrap_content"
+                       android:layout_height="match_parent"
+                       android:layout_margin="4dp"
+                       app:cardCornerRadius="10dp"
+                       app:contentPadding="10dp">
+
+                       <RelativeLayout
+                           android:id="@+id/dead_case_layout"
+                           android:layout_width="150dp"
+                           android:layout_height="wrap_content"
+                           android:padding="10dp">
+
+                           <ImageView
+                               android:layout_width="match_parent"
+                               android:layout_height="75dp"
+                               android:layout_alignParentTop="true"
+                               android:layout_marginBottom="10dp"
+                               android:src="@drawable/gravestone" />
+
+                           <TextView
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_above="@id/dead_case_textview"
+                               android:layout_centerHorizontal="true"
+                               android:text="Dead Case"
+                               android:textStyle="bold" />
+
+                           <TextView
+                               android:id="@+id/dead_case_textview"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_alignParentBottom="true"
+                               android:layout_centerHorizontal="true"
+                               android:text="000"
+                               android:textColor="@android:color/black"
+                               android:textSize="24sp"
+                               android:textStyle="bold" />
+                       </RelativeLayout>
+                   </androidx.cardview.widget.CardView>
+
+                   <androidx.cardview.widget.CardView
+                       android:layout_width="wrap_content"
+                       android:layout_height="match_parent"
+                       android:layout_margin="4dp"
+                       app:cardCornerRadius="10dp"
+                       app:contentPadding="10dp">
+
+                       <RelativeLayout
+                           android:id="@+id/hospitalized_case_layout"
+                           android:layout_width="150dp"
+                           android:layout_height="wrap_content"
+                           android:padding="10dp">
+
+                           <ImageView
+                               android:layout_width="match_parent"
+                               android:layout_height="75dp"
+                               android:layout_alignParentTop="true"
+                               android:src="@drawable/pharmacy" />
+
+                           <TextView
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_above="@id/hospitalized_case_textview"
+                               android:layout_centerHorizontal="true"
+                               android:text="Hospitalized Case"
+                               android:textAlignment="center"
+                               android:textStyle="bold" />
+
+                           <TextView
+                               android:id="@+id/hospitalized_case_textview"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_alignParentBottom="true"
+                               android:layout_centerHorizontal="true"
+                               android:text="000"
+                               android:textSize="24sp"
+                               android:textStyle="bold" />
+                       </RelativeLayout>
+                   </androidx.cardview.widget.CardView>
+               </LinearLayout>
+           </LinearLayout>
+
+           <com.google.android.material.button.MaterialButton
+               android:id="@+id/other_province_button"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="Other Province"
+               android:layout_marginHorizontal="20dp"
+               android:layout_marginTop="32dp"
+               app:cornerRadius="12dp"/>
+
+           <com.google.android.material.button.MaterialButton
+               android:id="@+id/other_country_button"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="Other Country"
+               android:layout_marginHorizontal="20dp"
+               android:layout_marginBottom="20dp"
+               app:cornerRadius="12dp"/>
+
+       </LinearLayout>
+   </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/progress_circular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+
+</RelativeLayout>
